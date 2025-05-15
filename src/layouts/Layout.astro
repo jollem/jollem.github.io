@@ -1,0 +1,58 @@
+---
+import "@fontsource/playball";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Desiderata" />
+    <meta
+      name="keywords"
+      content="life, meaning of life, things desired, keep it simple"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>jollem.github.io</title>
+  </head>
+  <body>
+    <video autoplay muted loop id="background">
+      <source src="/background.mp4" type="video/mp4" />
+    </video>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: "Playball", system-ui, sans-serif;
+    font-size: 150%;
+    background-color: #f6f6f6;
+    color: white;
+    margin: 1vh 0;
+  }
+  #background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+  main {
+    width: 80vw;
+    height: 95vh;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 2rem 0 2rem;
+    border-radius: 1rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  main::-webkit-scrollbar {
+    display: none;
+  }
+</style>
